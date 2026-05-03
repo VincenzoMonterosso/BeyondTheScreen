@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import stockimg from './assets/stockimg.png'
+import stockimg2 from './assets/stockimg2.png'
 import './App.css'
 import Logo from './Logo.jsx'
 import Shows from './Shows.jsx'
+import Subscription from './Subscription.jsx'
 
 function NavBar() {
   const [now, setNow] = useState(new Date())
@@ -30,6 +33,7 @@ function NavBar() {
           <b>Beyond The Screen</b>
         </a>
         <a className="nav-link" href="/shows">TV Shows</a>
+        <a className="nav-link" href="/premium">Premium</a>
       </div>
       <div className="nav-datetime" aria-live="polite">
         <span>{dateText}</span>
@@ -57,22 +61,13 @@ function LandingPage() {
           </p>
       </div>
 
-      <div aria-labelledby="premium" style={{ paddingTop: '20px' }}>
-        <details>
-        <summary id="premium">Premium Subscription</summary>
-        <article id="details">
-          <h3>Details</h3>
-          <p>First month: $150.00</p>
-          <p>1 initial evaluation</p>
-          <p>Email individualized plan</p>
-          <p>Follow up every week (3x) for 30 minutes each session</p>
-        </article>
-        </details>
+      <div className="landing-stock-row">
+        <img className="landing-stock-image" src={stockimg} alt="stockImage1" />
+        <img className="landing-stock-image" src={stockimg2} alt="stockImage2" />
       </div>
-
       <div id="info">
 
-        <div aria-labelledby="mission" style={{ paddingTop: '20px' }}>
+        <div aria-labelledby="mission" style={{ marginTop: '25px' }}>
           <h2 id="mission">Mission Statement</h2>
           <p>
             Beyond the Screen aims to empower families to use screen time with intention to support
@@ -97,12 +92,13 @@ function LandingPage() {
 }
 
 function App() {
-  const route = window.location.pathname === '/shows' ? '/shows' : '/'
+  const path = window.location.pathname
+  const route = path === '/shows' || path === '/premium' ? path : '/'
 
   return (
     <main>
       <NavBar />
-      {route === '/shows' ? <Shows /> : <LandingPage />}
+      {route === '/shows' ? <Shows /> : route === '/premium' ? <Subscription /> : <LandingPage />}
     </main>
   )
 }

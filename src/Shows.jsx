@@ -1,18 +1,23 @@
 import Logo from './Logo.jsx'
+import blueyImg from './assets/bluey.png'
+import './shows.css'
 
 export default function Shows() {
     return (
         <>
         <Logo />
+        <h1>TV Shows</h1>
         <section aria-labelledby="bluey">
             <h2 id="bluey">Bluey</h2>
+
+            <img className="show-image" src={blueyImg} alt="Bluey" />
             <p>
             <strong>Best Time of Day:</strong> Morning
             </p>
             <p>Supports waking up the nervous system and easing into daily routines.</p>
 
             <details>
-            <summary>Click to Learn More</summary>
+            <summary className="shows-summary">Learn More</summary>
             <article>
                 <h3>Sensory Input</h3>
                 <p>

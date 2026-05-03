@@ -95,3 +95,26 @@ details[open] > summary#premium::after {
   flex-direction: column;
   gap: 20px;
 }
+
+#info > div {
+  width: 50%;
+  margin: 0 auto;
+  padding: 8px 12px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.landing-stock-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 16px;
+}
+
+.landing-stock-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
