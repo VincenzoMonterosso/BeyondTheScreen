@@ -6,7 +6,7 @@ import Logo from './Logo.jsx'
 import Shows from './Shows.jsx'
 import Subscription from './Subscription.jsx'
 
-function NavBar() {
+function NavBar({ basePath }) {
   const [now, setNow] = useState(new Date())
 
   useEffect(() => {
@@ -29,11 +29,11 @@ function NavBar() {
   return (
     <nav className="top-nav" aria-label="Main navigation">
       <div className="nav-left">
-        <a className="nav-brand nav-link" href="/">
+        <a className="nav-brand nav-link" href={`${basePath}/`}>
           <b>Beyond The Screen</b>
         </a>
-        <a className="nav-link" href="/BeyondTheScreen/shows">TV Shows</a>
-        <a className="nav-link" href="/BeyondTheScreen/premium">Premium</a>
+        <a className="nav-link" href={`${basePath}/shows`}>TV Shows</a>
+        <a className="nav-link" href={`${basePath}/premium`}>Premium</a>
       </div>
       <div className="nav-datetime" aria-live="polite">
         <span>{dateText}</span>
@@ -105,11 +105,16 @@ function App() {
   const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
   const path = window.location.pathname
   const appPath = base && path.startsWith(base) ? path.slice(base.length) || '/' : path
-  const route = appPath === '/shows' || appPath === '/premium' ? appPath : '/'
+  const route = appPath.endsWith('/shows')
+    ? '/shows'
+    : appPath.endsWith('/premium')
+      ? '/premium'
+      : '/'
+  const basePath = base || ''
 
   return (
     <main>
-      <NavBar />
+      <NavBar basePath={basePath} />
       {route === '/shows' ? <Shows /> : route === '/premium' ? <Subscription /> : <LandingPage />}
       <Footer />
     </main>
