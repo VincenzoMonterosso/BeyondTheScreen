@@ -102,8 +102,10 @@ function LandingPage() {
 }
 
 function App() {
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
   const path = window.location.pathname
-  const route = path === '/shows' || path === '/premium' ? path : '/'
+  const appPath = base && path.startsWith(base) ? path.slice(base.length) || '/' : path
+  const route = appPath === '/shows' || appPath === '/premium' ? appPath : '/'
 
   return (
     <main>
