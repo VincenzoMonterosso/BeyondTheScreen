@@ -43,6 +43,16 @@ function NavBar() {
   )
 }
 
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <p>Ashley Foley OTR/L, </p>
+      <p> Rosanna Monterosso OTR/L, </p>
+      <p>Sarah Terrazola OTR/L</p>
+    </footer>
+  )
+}
+
 function LandingPage() {
   return (
     <>
@@ -99,6 +109,7 @@ function App() {
     <main>
       <NavBar />
       {route === '/shows' ? <Shows /> : route === '/premium' ? <Subscription /> : <LandingPage />}
+      <Footer />
     </main>
   )
 }
