@@ -32,8 +32,8 @@ function NavBar() {
         <a className="nav-brand nav-link" href="/">
           <b>Beyond The Screen</b>
         </a>
-        <a className="nav-link" href="/shows">TV Shows</a>
-        <a className="nav-link" href="/premium">Premium</a>
+        <a className="nav-link" href="/BeyondTheScreen/shows">TV Shows</a>
+        <a className="nav-link" href="/BeyondTheScreen/premium">Premium</a>
       </div>
       <div className="nav-datetime" aria-live="polite">
         <span>{dateText}</span>
