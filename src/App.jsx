@@ -65,10 +65,6 @@ function LandingPage() {
           <p>
             We list shows based on the time of day that is appropriate for a child to watch.
           </p>
-          <p>
-            Click the time of day to see suggested shows. Then click a show to view sensory input,
-            pacing, predictability, and emotional intensity.
-          </p>
       </div>
 
       <div className="landing-stock-row">

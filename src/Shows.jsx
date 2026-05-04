@@ -33,7 +33,7 @@ export default function Shows() {
                 </p>
                 <p>Short episodes (about 7 minutes)</p>
                 <p>About 160 words per minute</p>
-                <p>Supports attention without feeling rushed or overwhelming</p>
+                <p>Supports attention without feeling rushed or overwhelmed</p>
 
                 <h3>Predictability</h3>
                 <p>
